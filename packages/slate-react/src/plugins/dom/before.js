@@ -8,7 +8,7 @@ import {
   IS_CHROME,
   IS_MAC,
 } from 'slate-dev-environment'
-import { HAS_INPUT_EVENTS_LEVEL2 as HAS_INPUT_EVENTS_LEVEL_2_SLATE} from 'slate-dev-environment';
+import { HAS_INPUT_EVENTS_LEVEL_2 as HAS_INPUT_EVENTS_LEVEL_2_SLATE} from 'slate-dev-environment';
 
 import DATA_ATTRS from '../../constants/data-attributes'
 
