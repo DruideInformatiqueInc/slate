@@ -8,15 +8,16 @@ import {
   IS_CHROME,
   IS_MAC,
 } from 'slate-dev-environment'
-import { HAS_INPUT_EVENTS_LEVEL_2 as HAS_INPUT_EVENTS_LEVEL_2_SLATE} from 'slate-dev-environment';
+import { HAS_INPUT_EVENTS_LEVEL_2 as HAS_INPUT_EVENTS_LEVEL_2_SLATE } from 'slate-dev-environment'
 
 import DATA_ATTRS from '../../constants/data-attributes'
 
-let HAS_INPUT_EVENTS_LEVEL_2;
-if(IS_MAC && (IS_FIREFOX || IS_CHROME)){
-  HAS_INPUT_EVENTS_LEVEL_2 = false;
+let HAS_INPUT_EVENTS_LEVEL_2
+
+if (IS_MAC && (IS_FIREFOX || IS_CHROME)) {
+  HAS_INPUT_EVENTS_LEVEL_2 = false
 } else {
-  HAS_INPUT_EVENTS_LEVEL_2 = HAS_INPUT_EVENTS_LEVEL_2_SLATE;
+  HAS_INPUT_EVENTS_LEVEL_2 = HAS_INPUT_EVENTS_LEVEL_2_SLATE
 }
 
 /**
