@@ -16,12 +16,21 @@ function Rendering() {
       return <span {...attributes}>{children}</span>
     },
 
-    renderBlock({ attributes, children }) {
-      return (
-        <div {...attributes} style={{ position: 'relative' }}>
-          {children}
-        </div>
-      )
+    renderBlock({ attributes, children, readOnly }) {
+      if( readOnly ){
+        return (
+          <div {...attributes} style={{ position: 'relative' }} contenteditable="false">
+            {children}
+          </div>
+        )
+      } else {
+        return (
+          <div {...attributes} style={{ position: 'relative' }}>
+            {children}
+          </div>
+        )
+      }
+
     },
 
     renderDecoration({ attributes, children }) {
