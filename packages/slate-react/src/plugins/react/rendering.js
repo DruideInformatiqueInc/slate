@@ -1,4 +1,5 @@
 import React from 'react'
+import { IS_SAFARI } from 'slate-dev-environment'
 
 /**
  * The default rendering behavior for the React plugin.
