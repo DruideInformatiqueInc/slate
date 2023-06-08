@@ -25,9 +25,11 @@ import removeAllRanges from '../utils/remove-all-ranges'
 
 const FIREFOX_NODE_TYPE_ACCESS_ERROR = /Permission denied to access property "nodeType"/
 
+let IS_LINUX = HAS_INPUT_EVENTS_LEVEL_2_SLATE && !!window.navigator.userAgent.match(/linux\s+/i)
+
 let HAS_INPUT_EVENTS_LEVEL_2
 
-if (IS_MAC && (IS_FIREFOX || IS_CHROME)) {
+if ((IS_MAC && (IS_FIREFOX || IS_CHROME || IS_SAFARI)) || (IS_LINUX && (IS_FIREFOX || IS_CHROME))) {
   HAS_INPUT_EVENTS_LEVEL_2 = false
 } else {
   HAS_INPUT_EVENTS_LEVEL_2 = HAS_INPUT_EVENTS_LEVEL_2_SLATE
