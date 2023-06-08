@@ -17,18 +17,26 @@ function Rendering() {
     },
 
     renderBlock({ attributes, children, readOnly }) {
-      if( readOnly ){
+      if( IS_SAFARI ){
         return (
-          <div {...attributes} style={{ position: 'relative' }} contenteditable="false">
+          <div {...attributes} style={{ position: 'relative' }} contenteditable={readOnly ? "false" : "true"}>
             {children}
           </div>
         )
       } else {
-        return (
-          <div {...attributes} style={{ position: 'relative' }}>
-            {children}
-          </div>
-        )
+        if( readOnly ){
+          return (
+            <div {...attributes} style={{ position: 'relative' }} contenteditable={readOnly ? "false" : "true"}>
+              {children}
+            </div>
+          )
+        } else {
+          return (
+            <div {...attributes} style={{ position: 'relative' }}>
+              {children}
+            </div>
+          )
+        }
       }
     },
 
