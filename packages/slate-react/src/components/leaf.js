@@ -19,7 +19,7 @@ const TextString = ({ text = '', isTrailing = false }) => {
         [DATA_ATTRS.STRING]: true,
       }}
     >
-      {text}
+      { text.replace(new RegExp("\\r(?!\\n)", "g"), "\n")}
       {isTrailing ? '\n' : null}
     </span>
   )
