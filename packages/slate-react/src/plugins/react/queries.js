@@ -117,6 +117,10 @@ function QueriesPlugin() {
       return null
     }
 
+    if(domAnchor.node.nodeName.toUpperCase() === "TEXTHELPHIGHLIGHTSPAN" || domFocus.node.nodeName.toUpperCase() === "TEXTHELPHIGHLIGHTSPAN" ){
+      return null;
+    }
+
     const window = getWindow(domAnchor.node)
     const r = window.document.createRange()
     const start = isBackward ? domFocus : domAnchor
