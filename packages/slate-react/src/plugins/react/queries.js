@@ -395,6 +395,10 @@ function QueriesPlugin() {
    */
 
   function findRange(editor, domRange) {
+
+    if (domRange == null) {
+      return null;
+    }
     const el = domRange.anchorNode || domRange.startContainer
 
     if (!el) {
