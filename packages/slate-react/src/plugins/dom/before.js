@@ -377,7 +377,9 @@ function BeforePlugin() {
     // those elements. In Firefox, this must be prevented because it results in
     // issues with keyboard navigation. (2017/03/30)
     if (IS_FIREFOX && event.target !== el) {
-      el.focus()
+      if (el !== null) {
+        el.focus()
+      }
       return
     }
 
