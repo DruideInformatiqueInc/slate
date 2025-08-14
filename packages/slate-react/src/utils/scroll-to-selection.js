@@ -1,6 +1,6 @@
 import getWindow from 'get-window'
 import isBackward from 'selection-is-backward'
-import { IS_SAFARI, IS_IOS } from 'slate-dev-environment'
+import { IS_SAFARI, IS_CHROME, IS_IOS } from 'slate-dev-environment'
 
 /**
  * CSS overflow values that would cause scrolling.
@@ -78,7 +78,7 @@ function scrollToSelection(selection) {
   // for vertical scroll, although horizontal may be off by 1 character.
   // https://bugs.webkit.org/show_bug.cgi?id=138949
   // https://bugs.chromium.org/p/chromium/issues/detail?id=435438
-  if (IS_SAFARI) {
+  if (IS_SAFARI || IS_CHROME) {
     if (range.collapsed && cursorRect.top === 0 && cursorRect.height === 0) {
       if (range.startOffset === 0) {
         range.setEnd(range.endContainer, 1)
