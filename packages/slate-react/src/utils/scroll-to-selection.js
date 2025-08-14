@@ -154,7 +154,7 @@ function scrollToSelection(selection) {
   if (checkBottom) {
    cursorRectTop = cursorRect.bottom + (cursorRect.bottom  - cursorRect.top)
   }
-  const cursorTop = cursorRect.top + yOffset - scrollerTop
+  const cursorTop = cursorRectTop + yOffset - scrollerTop
   const cursorLeft = cursorRect.left + xOffset - scrollerLeft
 
   let x = xOffset
