@@ -7,7 +7,8 @@ import {
   IS_IOS,
   IS_CHROME,
   IS_MAC,
-  IS_SAFARI
+  IS_SAFARI,
+  IS_OPERA,
 } from 'slate-dev-environment'
 import { HAS_INPUT_EVENTS_LEVEL_2 as HAS_INPUT_EVENTS_LEVEL_2_SLATE } from 'slate-dev-environment'
 import DATA_ATTRS from '../../constants/data-attributes'
@@ -16,7 +17,7 @@ let HAS_INPUT_EVENTS_LEVEL_2
 
 let IS_LINUX = HAS_INPUT_EVENTS_LEVEL_2_SLATE && !!window.navigator.userAgent.match(/linux\s+/i)
 
-if ((IS_MAC && (IS_FIREFOX || IS_CHROME || IS_SAFARI)) || (IS_LINUX && (IS_FIREFOX || IS_CHROME))) {
+if ((IS_MAC && (IS_FIREFOX || IS_CHROME || IS_SAFARI, IS_OPERA)) || (IS_LINUX && (IS_FIREFOX || IS_CHROME))) {
   HAS_INPUT_EVENTS_LEVEL_2 = false
 } else {
   HAS_INPUT_EVENTS_LEVEL_2 = HAS_INPUT_EVENTS_LEVEL_2_SLATE
